@@ -6,7 +6,8 @@ const app = getApp()
 Page({
     data: {
         swiperList: [],
-        categoryNav: []
+        categoryNav: [],
+        floorList:[]
     },
     onLoad: function (options) {
         this.getSwiper();
@@ -44,7 +45,11 @@ Page({
         wx.request({
             url: 'https://api.zbztb.cn/api/public/v1/home/floordata',
             success: (res) => {
-                console.log(res);
+                const { message } = res.data;
+                console.log(message);
+                this.setData({
+                    floorList: message
+                })
 
             }
         });

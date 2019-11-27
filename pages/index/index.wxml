@@ -8,15 +8,23 @@
     </swiper>
 </view>
 <view class="nav">
-    <view wx:for="{{categoryNav}}" wx:key="{{index}}">
-        <navigator class="" url="../category/index">
-            <image class="" src="{{item.image_src}}" mode="widthFix" />
-        </navigator>   
-    </view>
+
+    <navigator class="" url="" wx:for="{{categoryNav}}" wx:key="{{index}}">
+        <image class="" src="{{item.image_src}}" mode="widthFix" />
+    </navigator>
+
 </view>
 <view class="floor_wrap">
-    <view class="item">
-        <view class="floor_title"></view>
-        <view class="floor_list"></view>
+    <view class="item clearfix" wx:for="{{floorList}}" wx:for-item="item1" wx:for-index="index1" wx:key="floor_title.name"
+        wx:index="floor_title">
+        <view class="floor_title">
+            <image class="" src="{{item1.floor_title.image_src}}" mode="widthFix" />
+        </view>
+        <view class="floor_list clearfix">
+            <navigator class="list_item" url="" wx:for="{{item1.product_list}}" wx:for-item="item2" wx:key="name"
+                wx:for-index="index2">
+                <image class="" src="{{item2.image_src}}" mode="{{index2===0?'widthFix':'scaleToFill'}}" />
+            </navigator>
+        </view>
     </view>
 </view>

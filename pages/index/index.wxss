@@ -12,6 +12,43 @@
   display: flex;
   justify-content: space-around;
 }
-.nav image {
-  width: 100rpx;
+.nav navigator {
+  flex: 1;
+  text-align: center;
+}
+.nav navigator image {
+  width: 50%;
+}
+.floor_wrap {
+  margin-top: 10rpx;
+}
+.floor_wrap .floor_title {
+  width: 100%;
+}
+.floor_wrap .item {
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+.floor_wrap .item .floor_list {
+  width: 100%;
+  height: 415.94827586rpx;
+  padding: 10rpx;
+}
+.floor_wrap .item .floor_list navigator {
+  float: left;
+  width: 33.33%;
+  vertical-align: bottom;
+}
+.floor_wrap .item .floor_list navigator image {
+  display: block;
+}
+.floor_wrap .item .floor_list .list_item:nth-last-child(-n+4) {
+  border: 2px solid #fff;
+  border-top: none;
+}
+.floor_wrap .item .floor_list .list_item:nth-last-child(-n+4) image {
+  height: 203.97413793rpx !important;
+}
+.floor_wrap .item .floor_list .list_item:nth-child(2n-1) {
+  border-right: none;
 }
