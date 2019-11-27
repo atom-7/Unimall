@@ -1,21 +1,17 @@
-/**index.wxss**/
-.userinfo {
+.swiper_wrap .item,
+.swiper_wrap .slider {
+  width: 100%;
+  height: 340rpx;
+}
+.swiper_wrap .img {
+  width: 100%;
+  height: 340rpx;
+}
+.nav {
+  margin-top: 15rpx;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.nav image {
+  width: 100rpx;
 }
