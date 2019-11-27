@@ -1,2 +1,9 @@
-<!--components/searchInput/searchInput.wxml-->
-<text>components/searchInput/searchInput.wxml</text>
+<view class="wrap">
+    <navigator class="" target="" url="">
+        
+        <input class="" value="" type="text" placeholder="搜索"> </input>
+    </navigator>
+      
+      
+</view>
+  

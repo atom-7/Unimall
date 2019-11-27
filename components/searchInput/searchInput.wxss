@@ -1,1 +1,17 @@
 /* components/searchInput/searchInput.wxss */
+.wrap{
+    height: 70rpx;
+    background-color: #eb4450;
+    line-height: 70rpx;
+    text-align: center;
+}
+.wrap navigator{
+    height: 90%;
+}
+.wrap navigator input{
+    background-color: #fff;
+    margin: 0 auto;
+    width: 95%;
+    height: 90%;
+    border-radius: 10rpx;
+}

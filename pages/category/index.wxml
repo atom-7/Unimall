@@ -1,2 +1,22 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="head">
+    <searchInput ></searchInput>
+</view>
+<view class="wrapper">
+    <scroll-view class="tab_list" scroll-y>
+        <view class="tab" wx:for="{{tabList}}" wx:key="cat_id">
+            <!-- message: Array(30)
+                0: {cat_id: 1, 
+                    cat_name: "大家电", cat_pid: 0,
+                     cat_level: 0, cat_deleted: false, 
+                     …} -->
+            <view bindtap="" class="title {{index===currentIndex ? 'active':''}}">
+                {{item.cat_name}}
+            </view>
+
+        </view>
+
+    </scroll-view>
+    <scroll-view class="tab_content" scroll-y>
+
+    </scroll-view>
+</view>

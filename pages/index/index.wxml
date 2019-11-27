@@ -1,6 +1,7 @@
 <!--index.wxml-->
+ <searchInput></searchInput>
 <view class="swiper_wrap">
-    <swiper class="slider" indicator-dots indicator-color="rgba(0,0,0,.3)" autoplay interval="1000" circular>
+    <swiper class="slider" indicator-dots indicator-color="rgba(0,0,0,.3)" autoplay interval="2500" circular>
         <swiper-item class="item" item-id="" wx:for="{{swiperList}}" wx:key="{{goods_id}}">
             <image class="img" src="{{item.image_src}}" mode="widthFix" />
         </swiper-item>

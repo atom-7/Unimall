@@ -1,0 +1,47 @@
+.wrapper{
+    display: flex;
+    margin-top: 70rpx;
+    color: #333;
+}
+.tab_list{
+    height: 1080rpx;
+    // overflow: auto;
+    width: 200rpx;
+    .tab{
+        padding: 10rpx 0;
+        padding-left: 2rpx;
+        text-align: center;
+        width: 200rpx;
+        height:80rpx;
+        border-bottom: 1px solid #999;
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        text-align: center;
+        font-size: 28rpx;
+        .title{
+            width: 100%;
+            height: 100%;
+            line-height: 56rpx;
+            display: flex;
+            justify-content: center;
+            border-left: 8rpx solid #ff0000;
+        }
+
+    }
+    
+}
+.tab_content{
+    flex: 1;
+    background-color: pink;
+}
+.head{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.active{
+    border-left: 8rpx solid #ff0000;
+    color: #ff0000;
+}
