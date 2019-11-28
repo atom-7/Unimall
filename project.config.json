@@ -21,7 +21,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.3",
+	"libVersion": "2.9.2",
 	"appid": "wxa8d80bd57199025e",
 	"projectname": "Unimall%E8%B6%85%E5%B8%82",
 	"debugOptions": {
@@ -62,9 +62,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "商品列表",
-					"pathName": "pages/goods_list/index",
+					"id": 1,
+					"name": "pages/goods_list/goods_list",
+					"pathName": "pages/goods_list/goods_list",
+					"query": "query=海信&cid=6",
 					"scene": null
 				}
 			]

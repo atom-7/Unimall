@@ -1,1 +1,55 @@
-/* pages/goods_list/goods_list.wxss */
+.content_list .filter {
+  display: flex;
+  border: 2rpx solid #ddd;
+}
+.content_list .filter view {
+  width: 33.33%;
+  height: 70rpx;
+  color: #8b8588;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
+.content_list .filter .active {
+  color: #eb4450;
+  border-bottom: 4rpx solid #eb4450;
+}
+.content_list .list_wrap .item {
+  padding: 20rpx;
+  height: 260rpx;
+  border-bottom: 4rpx solid #ddd;
+  overflow: hidden;
+}
+.content_list .list_wrap .item navigator {
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.content_list .list_wrap .item .img {
+  flex: 0 0 40%;
+}
+.content_list .list_wrap .item .img image {
+  width: 100%;
+  height: 100%;
+}
+.content_list .list_wrap .item .desc {
+  font-size: 28rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  padding-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content_list .list_wrap .item .desc .title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 28rpx;
+}
+.content_list .list_wrap .item .desc .price {
+  color: #eb4450;
+  font-size: 32rpx;
+}
