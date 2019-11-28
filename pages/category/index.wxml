@@ -1,5 +1,5 @@
 <view class="head">
-    <searchInput ></searchInput>
+    <searchInput></searchInput>
 </view>
 <view class="wrapper">
     <scroll-view class="tab_list" scroll-y>
@@ -9,7 +9,8 @@
                     cat_name: "大家电", cat_pid: 0,
                      cat_level: 0, cat_deleted: false, 
                      …} -->
-            <view bindtap="" class="title {{index===currentIndex ? 'active':''}}">
+            <view bindtap="handleActive" data-index="{{index}}" data-child="{{item.children}}"
+                class="title {{index===currentIndex ? 'active':''}}">
                 {{item.cat_name}}
             </view>
 
@@ -17,6 +18,21 @@
 
     </scroll-view>
     <scroll-view class="tab_content" scroll-y>
-
+        <view class="tab_detail" wx:for="{{currentChild}}" wx:for-item="item1" wx:for-indx="index1" wx:key="cat_id">
+            <view class="content_head">
+                {{item1.cat_name}}
+            </view>
+            <view class="product_list">
+                <view class="item" wx:for="{{item1.children}}" wx:for-item="item2" wx:for-index="index2"
+                    wx:key="cat_id">
+                    <navigator class="" url="../goods_list/index?query={{item2.cat_name}}&cid={{item2.cat_id}}">
+                        <image class="img" src="{{item2.cat_icon}}" mode="aspectFill" />
+                        <text class="desc">
+                            {{item2.cat_name}}
+                        </text>
+                    </navigator>
+                </view>
+            </view>
+        </view>
     </scroll-view>
 </view>

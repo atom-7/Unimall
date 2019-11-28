@@ -1,47 +1,98 @@
-.wrapper{
+.wrapper {
     display: flex;
     margin-top: 70rpx;
     color: #333;
 }
-.tab_list{
+
+.tab_list {
     height: 1080rpx;
-    // overflow: auto;
     width: 200rpx;
-    .tab{
+
+    .tab {
         padding: 10rpx 0;
         padding-left: 2rpx;
         text-align: center;
         width: 200rpx;
-        height:80rpx;
-        border-bottom: 1px solid #999;
+        height: 80rpx;
         display: flex;
         align-items: center;
-        justify-content:center;
+        justify-content: center;
         text-align: center;
         font-size: 28rpx;
-        .title{
+
+        .title {
             width: 100%;
             height: 100%;
             line-height: 56rpx;
             display: flex;
             justify-content: center;
-            border-left: 8rpx solid #ff0000;
         }
 
     }
-    
+
 }
-.tab_content{
+
+.tab_content {
+    height: 1080rpx;
+    overflow: hidden;
     flex: 1;
-    background-color: pink;
+    background-color: #ffffff;
+
+    .tab_detail {
+        padding: 20rpx;
+        .product_list {
+            margin-top: 40rpx;
+            display: flex;
+            flex-wrap: wrap;
+            .item{
+                margin-bottom: 20rpx;
+                text-align: center;
+                height: 150rpx;
+                width: 33.33%;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                .desc{
+                    font-size: 28rpx;
+                }
+            }
+            image {
+                width: 135rpx;
+                height: 80rpx;
+                margin-bottom: 8rpx;
+            }
+        }
+
+        .content_head {
+            text-align: center;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            &::before,&::after{
+                content: "";
+                display: inline-block;
+                margin-right: 30rpx;
+                width: 2rpx;
+                height: 40rpx;
+                background-color: #999; 
+                transform: rotate(20deg);
+            }
+            &::after{
+                margin-left: 30rpx;
+                transform: rotate(20deg);
+            }
+        }
+    }
 }
-.head{
+
+.head {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 2;
 }
-.active{
+
+.active {
     border-left: 8rpx solid #ff0000;
     color: #ff0000;
 }
