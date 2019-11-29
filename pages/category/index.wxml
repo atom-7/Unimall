@@ -2,7 +2,7 @@
     <searchInput></searchInput>
 </view>
 <view class="wrapper">
-    <scroll-view class="tab_list" scroll-y>
+    <scroll-view class="tab_list"  scroll-y>
         <view class="tab" wx:for="{{leftMenu}}" wx:key="index">
             <!-- message: Array(30)
                 0: {cat_id: 1, 
@@ -17,7 +17,7 @@
         </view>
 
     </scroll-view>
-    <scroll-view class="tab_content" scroll-y>
+    <scroll-view class="tab_content" scroll-top="{{scrollTop}}" scroll-y>
         <view class="tab_detail" wx:for="{{currentChild}}" wx:for-item="item1" wx:for-indx="index1" wx:key="cat_id">
             <view class="content_head">
                 {{item1.cat_name}}
