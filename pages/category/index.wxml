@@ -3,15 +3,15 @@
 </view>
 <view class="wrapper">
     <scroll-view class="tab_list" scroll-y>
-        <view class="tab" wx:for="{{tabList}}" wx:key="cat_id">
+        <view class="tab" wx:for="{{leftMenu}}" wx:key="index">
             <!-- message: Array(30)
                 0: {cat_id: 1, 
                     cat_name: "大家电", cat_pid: 0,
                      cat_level: 0, cat_deleted: false, 
                      …} -->
-            <view bindtap="handleActive" data-index="{{index}}" data-child="{{item.children}}"
+            <view bindtap="handleActive" data-index="{{index}}" 
                 class="title {{index===currentIndex ? 'active':''}}">
-                {{item.cat_name}}
+                {{item}}
             </view>
 
         </view>
