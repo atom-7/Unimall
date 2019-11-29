@@ -8,7 +8,7 @@
     </view>
     <scroll-view class="list_wrap" bindscrolltolower="handleGetBottom">
         <view class="item" wx:for="{{productList}}" wx:key="goods_id">
-            <navigator class="" url="">
+            <navigator class="" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
                 <view class="img">
                     <image class="" lazy-load src="{{item.goods_big_logo}}" mode="aspectFit" />
                 </view>

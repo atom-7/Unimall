@@ -1,1 +1,9 @@
-/* pages/goods_detail/goods_detail.wxss */
+.swiper .slider {
+  box-sizing: border-box;
+  height: 460rpx;
+}
+.swiper .slider image {
+  padding: 0 60rpx;
+  height: 100%;
+  padding-bottom: 30rpx;
+}

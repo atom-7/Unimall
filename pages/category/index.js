@@ -18,7 +18,7 @@ Page({
     }
     else {  //? 这是有存的情况
     
-      if (+new Date() - getOldData.time> 10 * 1000) {  // todo  判断过期了没    两者时间差不得超过 10 S
+      if (+new Date() - getOldData.time> 3600 * 1000) {  // todo  判断过期了没    两者时间差不得超过 10 S
         console.log('过期了');
         
         this.getTab();

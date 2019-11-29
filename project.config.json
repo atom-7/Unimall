@@ -63,9 +63,16 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/goods_list/goods_list",
+					"name": "列表页",
 					"pathName": "pages/goods_list/goods_list",
 					"query": "query=海信&cid=6",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "详情",
+					"pathName": "pages/goods_detail/goods_detail",
+					"query": "goods_id=8888",
 					"scene": null
 				}
 			]
