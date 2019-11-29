@@ -1,7 +1,7 @@
 <view class="wrap">
     <navigator class="" target="" url="">
         
-        <input class="" value="" type="text" placeholder="搜索"> </input>
+        <input class="" value="" disabled="true" type="text" placeholder="搜索"> </input>
     </navigator>
       
       

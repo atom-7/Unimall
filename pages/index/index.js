@@ -54,7 +54,23 @@ Page({
             }
         });
 
-    }
+    },
+    fixUrl(url){
+    
+        let newurl = '';
+        let arr = ['pages/index/index','pages/category/index'];
+        if(arr.indexOf(url)>-1){
+           newurl = url;
+        }else{
+          // if(url.lastIndexOf('/index')>-1){
+            // }
+           let str= url.slice(7,url.lastIndexOf('/'));
+            newurl = url.replace(/index/g,str);
+    
+    
+        }
+        return newurl;
+      },
 
 
 });
