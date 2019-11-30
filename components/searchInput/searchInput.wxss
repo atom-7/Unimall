@@ -4,8 +4,12 @@
     background-color: #eb4450;
     line-height: 70rpx;
     text-align: center;
+    padding-top: 12rpx;
+    /* display: flex;
+    align-content: center; */
 }
 .wrap navigator{
+    width: 100%;
     height: 90%;
 }
 .wrap navigator input{
