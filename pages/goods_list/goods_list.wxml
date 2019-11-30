@@ -4,13 +4,14 @@
         <view class=" {{index===showIndex?'active':''}}" wx:for="{{filterList}}" wx:key="index" bindtap="handleIndex"
             data-index="{{index}}">
             {{item}}
+    
         </view>
     </view>
     <scroll-view class="list_wrap" bindscrolltolower="handleGetBottom">
         <view class="item" wx:for="{{productList}}" wx:key="goods_id">
             <navigator class="" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
                 <view class="img">
-                    <image class="" lazy-load src="{{item.goods_big_logo}}" mode="aspectFit" />
+                    <image class="" lazy-load src="{{item.goods_big_logo || miss}}" mode="aspectFit" />
                 </view>
                 <view class="desc">
                     <view class="title">
