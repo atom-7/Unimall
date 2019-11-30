@@ -1,12 +1,144 @@
-.swiper{
-    .slider{
+.swiper {
+    .slider {
         box-sizing: border-box;
         height: 460rpx;
-        image{
-            
-           padding:0 60rpx;
-           height: 100%;
-           padding-bottom: 30rpx;
+
+        image {
+
+            padding: 0 60rpx;
+            height: 100%;
+            padding-bottom: 30rpx;
         }
     }
 }
+
+.product_info {
+    .price {
+        padding-left: 20rpx;
+        font-weight: 600;
+        color: var(--color);
+    }
+
+    .desc {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        height: 120rpx;
+        padding: 14rpx 0;
+        border-bottom: 10rpx solid #eeeeee;
+        color: #666;
+        .name {
+            flex: 1;
+            padding: 0 12rpx;
+            overflow: hidden;
+
+            >view {
+                font-size: 28rpx;
+                overflow : hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+
+            }
+        }
+
+        .favorite {
+            border-left: 1px solid #888;
+            padding: 0 30rpx;
+            height: 100%;
+            text-align: center;
+            color: #666;
+            font-size: 28rpx;
+
+            .icon {}
+        }
+    }
+}
+.img_detail{
+    margin-bottom: 100rpx;
+    .img_detail_title{
+        padding: 20rpx 0;
+        font-weight: 600;
+        color: var(--color);
+        padding-left: 20rpx;
+    }
+    .rich_text{
+
+    }
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 90rpx;
+    background-color: #fff;
+    display: flex;
+    box-shadow:  0 0 1px #999;
+    .left_option {
+        flex: 6;
+        display: flex;
+        >view{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            .iconfont{
+                padding-right: 4rpx;
+            }
+            .text{
+                font-size: 26rpx;
+            }
+        }
+
+
+      .contact {
+        
+  
+        text {
+  
+        }
+      }
+  
+      .share {
+        
+  
+        text {
+  
+        }
+      }
+  
+      .cart {
+        
+  
+        text {
+  
+        }
+      }
+    }
+  
+    .right_buy {
+        flex: 4;
+        display: flex;
+       
+        >view{
+            flex: 1;
+          
+            font-size: 26rpx;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      .add_cart {
+        background-color: #ffa500;
+      }
+  
+      .buy_now {
+        background-color: #eb4450;
+      }
+    }
+  }

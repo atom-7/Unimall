@@ -1,13 +1,70 @@
 <viwe class="swiper">
-    <swiper class="slider" indicator-dots  autoplay
-         interval="2000" circular 
-    >
-        <swiper-item class="" item-id="" wx:key="{{pics_id}}"  wx:for="{{productDetail.pics}}">
+    <swiper class="slider" indicator-dots autoplay interval="2000" circular>
+        <swiper-item class="" item-id="" wx:key="{{pics_id}}" wx:for="{{productDetail.pics}}">
             <image class="" src="{{item.pics_big}}" mode="aspectFit" />
-              <!-- <image class="" src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" /> -->
-                
+            <!-- <image class="" src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" /> -->
+
         </swiper-item>
-          
+
     </swiper>
-      
-</viwe> 
+
+</viwe>
+<view class="product_info">
+    <view class="price">
+        ￥ {{productDetail.goods_price}}
+    </view>
+    <view class="desc">
+        <view class="name">
+            <view class="">
+               {{productDetail.goods_name}}
+            </view>
+        </view>
+        <view class="favorite">
+            <text class="iconfont icon-shoucang">
+
+            </text>
+            <text class="">
+                收藏
+            </text>
+
+
+        </view>
+    </view>
+</view>
+<view class="img_detail">
+    <view class="img_detail_title">
+        图文详情
+    </view>
+    <rich-text class="rich_text" nodes="{{productDetail.goods_introduce}}">
+
+    </rich-text>
+
+</view>
+<view class="footer">
+    <view class="left_option">
+        <view class="contact">
+            <view class="iconfont icon-kefu"> </view>
+            <view class="text">联系客服</view>
+              
+        </view>
+        <view class="share">
+            <view class="iconfont icon-yixianshi-"> </view>
+            <view class="text" >分享</view>
+              
+        </view>
+        <view class="cart">
+            <view class="iconfont icon-gouwuche"> </view>
+            <view class="text">购物车</view>
+              
+        </view>
+    </view>
+    <view class="right_buy">
+        <view class="add_cart">
+            加入购物车
+        </view>
+        <view class="buy_now">
+            立即购买
+        </view>
+    </view>
+
+</view>

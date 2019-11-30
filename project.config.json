@@ -21,7 +21,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.2",
+	"libVersion": "2.9.4",
 	"appid": "wxa8d80bd57199025e",
 	"projectname": "Unimall%E8%B6%85%E5%B8%82",
 	"debugOptions": {
@@ -72,7 +72,7 @@
 					"id": 2,
 					"name": "详情",
 					"pathName": "pages/goods_detail/goods_detail",
-					"query": "goods_id=8888",
+					"query": "goods_id=47866",
 					"scene": null
 				}
 			]
