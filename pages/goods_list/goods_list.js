@@ -7,8 +7,8 @@ Page({
    */
   data: {
     filterList: ['综合', '销量', '价格'],// tab栏的文字
-    showIndex: 0,// tab栏切换的inedx
-    pageIndex: 0,// 获取数据的页码
+    showIndex: 0,// tab栏切换显示用的inedx
+    pageIndex: 0,// 当前的页码数
     productList: [],// 搜索获取回来的商品列表数据
     total: 0,
     // * 404图片路径
@@ -67,27 +67,27 @@ Page({
           total
         })
         console.log(this.data.productList);
+        wx.stopPullDownRefresh();
+          
+          
       })
-    // wx.request({
-
-
-    //   success: (res) => {
-
-
-    //   }
-    // });
+    
 
   },
-  handleGetBottom() {
-    this.getSearchList();
-  },
-  onReachBottom() {
+  // * 当滑动到底部出发
+  onReachBottom() { 
     console.log('onReachBottom');
     this.getSearchList();
   },
   onPullDownRefresh() {
-    console.log('onPullDownRefresh');
-
+    console.log('下拉刷新了');
+    this.setData({
+      pageIndex:0
+    });
+    this.getSearchList();
+    this.setData({
+      productList:[]
+    })
   }
 
 })
