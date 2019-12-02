@@ -7,7 +7,7 @@ Page({
    */
   data: {
     filterList: ['综合', '销量', '价格'],// tab栏的文字
-    showIndex: 0,// tab栏切换显示用的inedx
+    tabIndex: 0,// tab栏切换显示用的inedx
     pageIndex: 0,// 当前的页码数
     productList: [],// 搜索获取回来的商品列表数据
     total: 0,
@@ -16,7 +16,7 @@ Page({
 
   },
   axios,
-  /**
+  /** 
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
@@ -28,7 +28,7 @@ Page({
     })
     this.getSearchList();
   },
-  // 处理点击过滤的事件
+  //* 处理点击过滤的事件
   handleIndex(e) {
 
     const { index } = e.currentTarget.dataset;
@@ -36,7 +36,7 @@ Page({
       showIndex: index
     })
   },
-  // 获取搜索的列表
+  //* 获取搜索的列表
   getSearchList() {
     //? 获取最大页数, 如果当前页码已经是最大页码,就return
     let max = Math.ceil(this.data.total / 10);
@@ -79,6 +79,7 @@ Page({
     console.log('onReachBottom');
     this.getSearchList();
   },
+  // * 处理下拉的时候刷新, 重置列表数据
   onPullDownRefresh() {
     console.log('下拉刷新了');
     this.setData({
@@ -88,6 +89,14 @@ Page({
     this.setData({
       productList:[]
     })
+  },
+  // * 处理tabBar 的index
+  handleIndex(e){
+    const tabIndex = e.detail.index;
+    this.setData({
+      tabIndex
+    })
+    
   }
 
 })

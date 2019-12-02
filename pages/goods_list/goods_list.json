@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "searchInput":"/components/searchInput/searchInput"
+    "searchInput":"/components/searchInput/searchInput",
+    "TabBar":"../../components/Tab/tabBar"
   },
   "enablePullDownRefresh": true,
   "backgroundTextStyle": "dark"

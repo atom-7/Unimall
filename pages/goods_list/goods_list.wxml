@@ -1,27 +1,32 @@
 <searchInput></searchInput>
 <view class="content_list">
-    <view class="filter">
-        <view class=" {{index===showIndex?'active':''}}" wx:for="{{filterList}}" wx:key="index" bindtap="handleIndex"
-            data-index="{{index}}">
-            {{item}}
-    
-        </view>
-    </view>
-    <scroll-view class="list_wrap" bindscrolltolower="handleGetBottom">
-        <view class="item" wx:for="{{productList}}" wx:key="goods_id">
-            <navigator class="" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
-                <view class="img">
-                    <image class="" lazy-load src="{{item.goods_big_logo || miss}}" mode="aspectFit" />
+    <view class="">
+        <TabBar tabNameList="{{filterList}}" bindgetIndex="handleIndex" showIndex="{{tabIndex}}">
+            <scroll-view wx:if="{{tabIndex===0}}" class="list_wrap" bindscrolltolower="handleGetBottom">
+                <view class="item" wx:for="{{productList}}" wx:key="goods_id">
+                    <navigator class="" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+                        <view class="img">
+                            <image class="" lazy-load src="{{item.goods_big_logo || miss}}" mode="aspectFit" />
+                        </view>
+                        <view class="desc">
+                            <view class="title">
+                                {{item.goods_name}}
+                            </view>
+                            <text class="price">￥ {{item.goods_price}}</text>
+                        </view>
+                    </navigator>
                 </view>
-                <view class="desc">
-                    <view class="title">
-                        {{item.goods_name}}
-                    </view>
-                    <text class="price">￥ {{item.goods_price}}</text>
-                </view>
-            </navigator>
-        </view>
 
-    </scroll-view>
+            </scroll-view>
+            <view wx:elif="{{tabIndex===1}}">
+                销量
+            </view>
+            <view wx:else="{{tabIndex===2}}">
+                价格
+            </view>
+
+        </TabBar>
+    </view>
+
 
 </view>
