@@ -1,0 +1,16 @@
+.tab {
+    display: flex;
+    border: 2rpx solid #ddd;
+  }
+.tab view {
+    width: 33.33%;
+    height: 70rpx;
+    color: #8b8588;
+    font-size: 28rpx;
+    text-align: center;
+    line-height: 70rpx;
+  }
+.tab .active {
+    color: #eb4450;
+    border-bottom: 4rpx solid #eb4450;
+  }
