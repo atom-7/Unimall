@@ -74,6 +74,20 @@
 					"pathName": "pages/goods_detail/goods_detail",
 					"query": "goods_id=47866",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/user/user",
+					"query": "goods_id=47866",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

@@ -56,7 +56,7 @@
             </button>
         </view>
         <view class="cart">
-            <navigator url="/pages/cart/ca" >
+            <navigator open-type="switchTab" url="/pages/cart/cart" >
                 <view class="iconfont icon-gouwuche"> </view>
                 <view class="text">购物车</view>
             </navigator>
