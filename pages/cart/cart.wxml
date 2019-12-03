@@ -8,8 +8,60 @@
  </button>
 </view>
 <view class="cart_list">
-
+    <view class="name">
+        商品
+    </view>
+    <view class="prod_Lsit">
+        <view class="item" wx:for="{{productList}}" wx:key="index">
+            <view class="chk">
+               <checkbox class="" bindtap="handleCheck" data-index="{{index}}" value=""checked="{{item.ischeck||false}}" color="#ff0000">
+                   
+               </checkbox>  
+            </view>
+            <view class="img">
+                <image class="" src="{{item.goods_small_logo}}" mode=widthFix"  />
+                
+            </view>
+            <view class="detail">
+                <view class="title">
+                    {{item.goods_name}}
+                </view>
+                <view class="info">
+                    <view class="price">￥ {{item.goods_price}}</view>
+                    <view class="count">
+                       <view class="jian" data-num="{{-1}}" data-index="{{index}}" bindtap="changeNum">-</view>    
+                        <view class="number">{{item.number}}</view>
+                        <view class="jia" data-num="{{1}}" data-index="{{index}}" bindtap="changeNum">+</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
 </view>
 <view class="calc">
-
+   <view class="chk">
+       <checkbox bindtap="handleSelectAll" data-="" checked="{{checkAll}}" class="" value="" >
+           
+       </checkbox>
+         全选
+   </view>
+   <view class="total_price">
+       <view class="top">
+           合计:
+           <view>
+                ￥ {{totalPrice}}
+           </view>
+             
+       </view>
+       <view class="bottom">
+            包含运费
+       </view>
+   </view>
+   <view class="count">
+       <view class="btn_calc">
+           结算({{goods_number}})
+       </view>
+         
+   </view>
+   
 </view>
