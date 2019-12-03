@@ -143,6 +143,29 @@ Page({
       
    
     this.calcPrice();
+  },
+  //* 支付结算
+  handlePay(){
+    const {address,goods_number} = this.data;
+     if(!address.cityName){
+        wx.showToast({
+          title: '请选择地址',
+          icon:'none',
+          mask: true,
+        });
+          
+     }else if(goods_number===0){
+        wx.showToast({
+          title: '请选择商品',
+          icon:'none',
+          mask: true,
+        });
+     }else{
+      wx.setStorageSync("address",this.data.address);
+       wx.navigateTo({url: '/pages/pay/pay' });
+         
+     }
+    
   }
 
 

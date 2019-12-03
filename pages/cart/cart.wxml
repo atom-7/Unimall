@@ -58,7 +58,7 @@
        </view>
    </view>
    <view class="count">
-       <view class="btn_calc">
+       <view class="btn_calc" bindtap="handlePay">
            结算({{goods_number}})
        </view>
          

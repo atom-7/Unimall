@@ -4,6 +4,7 @@
     "TabBar":"../../components/Tab/tabBar"
   },
   "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark"
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "列表"
   
 }
