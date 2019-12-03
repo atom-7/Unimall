@@ -3,10 +3,9 @@ export const getAddress = function () {
         wx.chooseAddress({
             success: (result) => {
                 resolve(result)
+                console.log(result);
+                
             },
-            // fail: (err) => {
-            //     reject(err)
-            // }
         });
     })
 }
