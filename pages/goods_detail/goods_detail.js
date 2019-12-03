@@ -30,5 +30,30 @@ Page({
       current: e.currentTarget.dataset.src, // 当前显示图片的http链接
       urls: this.imgList // 需要预览的图片http链接列表
     })
+  },
+  // *处理添加到本地数据
+  AddToCart(e){
+    const data=this.data.productDetail;
+     data["ischeck"]=true;
+    const cartList= wx.getStorageSync("cartList") || [];
+    const index=cartList.findIndex(v=> v.goods_id ===data.goods_id);
+    if(index>-1){
+      cartList[index].number+=1;
+    }else{
+      data.number = 1;
+      cartList.push(data);
+    };
+    wx.setStorageSync("cartList", cartList);
+    wx.showToast({
+      title: '添加成功',
+      duration: 500,
+      mask: true,
+      success: (result) => {
+        
+      }
+    });
+      
+      
+      
   }
 })

@@ -63,7 +63,7 @@
         </view>
     </view>
     <view class="right_buy">
-        <view class="add_cart">
+        <view class="add_cart" bindtap="AddToCart">
             加入购物车
         </view>
         <view class="buy_now">
