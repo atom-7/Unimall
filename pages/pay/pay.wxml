@@ -45,9 +45,9 @@
        </view>
    </view>
    <view class="count">
-       <view class="btn_calc" bindtap="goToPay">
+       <button class="btn_calc" style="background:#eb4450;color:white;" open-type="getUserInfo" bindgetuserinfo="goToPay">
            支付({{goods_number}})
-       </view>
+       </button>
          
    </view>
    

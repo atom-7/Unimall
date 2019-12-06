@@ -1,9 +1,11 @@
 import regeneratorRuntime from '../../lib/runtime/runtime';
 import axios from '../../request/axios';
+import {login,requestPayment} from '../../utils/pay';
 Page({
 
   /**
    * 页面的初始数据
+   * 
    */
   data: {
     address:{},
@@ -18,8 +20,6 @@ Page({
   onLoad: function (options) {
     // this.handleAddress()
     const address = wx.getStorageSync("address");
-    console.log(address);
-    
     this.setData({
       address
     })
@@ -29,7 +29,7 @@ Page({
     // this.handleAddress();
     const list = wx.getStorageSync('cartList') || [];
     this.setData({
-      productList:list
+      productList:list.filter(v=>v.ischeck)
     });
     this.calcPrice();
 
@@ -61,8 +61,68 @@ Page({
   },
   
   //* 支付结算
-  goToPay(){
+  async goToPay(e){
+
+   // todo  这里是获取用户信息
+   const {encryptedData,rawData,signature,iv}= e.detail;
+
+   // todo 这里是获悉用户的登录微信返回的code
+   const code=await login();
+   
+  //todo  发请求获取token
+   const token= await axios({url:'https://api.zbztb.cn/api/public/v1/users/wxlogin',method:'post',data:{encryptedData,rawData,signature,iv,code}
+    }).then((res)=> res.data.message.token);
+
+   //todo 创建后台订单单号
+  const order= await axios({
+     url:'https://api.zbztb.cn/api/public/v1/my/orders/create',
+     method:'post',
+     header:{Authorization:token},
+     data:{
+      order_price:this.data.totalPrice,
+      consignee_addr:this.data.address.cityName,
+      goods:this.data.productList
+     }
+   }).then((res)=>res.data.message.order_number);
+  
+   //todo 通过订单单号去获取微信支付接口的参数
+
+    const payData =await axios({
+      url:'https://api.zbztb.cn/api/public/v1/my/orders/req_unifiedorder',
+      method:'post',
+      header:{Authorization:token},
+      data:{order_number:order}
+    }).then((res)=>res.data.message.pay);
     
+   
+   //todo 真正的发起支付
+   const payed=await requestPayment(payData);
+
+    //todo 查询订单
+  const isPayed = await axios({
+     url:'https://api.zbztb.cn/api/public/v1/my/orders/chkOrder',
+     method:'post',
+     header:{Authorization:token},
+     data:{order_number:order}
+   }).then((res)=>res.data.message);
+   
+   // todo 提示用户支付成功或失败
+     wx.showToast({
+       title:isPayed,
+       icon: 'none',
+       duration: 1200,
+       mask: true,
+   })
+    const newarr = this.data.productList.filter(v=>!v.ischeck);
+   
+    this.setData({
+      productList:newarr
+    });
+    wx.setStorageSync("cartList", newarr);
+      
+   
     
-  }
+      
+  },
+
 })
